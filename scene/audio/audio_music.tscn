@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvrpx2gmwjw4x"]
+
+[ext_resource type="AudioStream" uid="uid://bonah5guxuraj" path="res://assets/background music/traverse_town.mp3" id="1_70vyp"]
+
+[node name="AudioTraverseTown" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_70vyp")
+parameters/looping = true

@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "02",
+&"description": "",
+&"display_name": "fisherman",
+&"mirror": false,
+&"nicknames": ["Fisherman"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"02": {
+"export_overrides": {
+"image": "\"res://scene/Entities/Player/4 Icons/Icons_02.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
+&"scale": 1.0
+}

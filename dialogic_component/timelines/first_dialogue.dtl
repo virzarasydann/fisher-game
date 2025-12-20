@@ -1,0 +1,6 @@
+if {first_dialogue.is_at_gate} == true:
+	fisherman: Kita sudah mencapai gerbang desa, ayo kita masuk...
+else:
+	fisherman: Hai
+	fisherman: Hari yang cerah disini.
+	fisherman: Gas mancing!

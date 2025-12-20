@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfvnkpb5v76mt"]
+
+[ext_resource type="Texture2D" uid="uid://dm2hssjccw5pt" path="res://scene/Level/Village/NPC/1 Woodcutter/Woodcutter_attack1.png" id="1_l3hf5"]
+[ext_resource type="Script" uid="uid://1j38k43k6oi8" path="res://scene/Level/Village/NPC/1 Woodcutter/wood_cutter.gd" id="2_uiw5m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiw5m"]
+atlas = ExtResource("1_l3hf5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i0lu"]
+atlas = ExtResource("1_l3hf5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atnxk"]
+atlas = ExtResource("1_l3hf5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nrrj"]
+atlas = ExtResource("1_l3hf5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q38qb"]
+atlas = ExtResource("1_l3hf5")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i25fh"]
+atlas = ExtResource("1_l3hf5")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ej04p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiw5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i0lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atnxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nrrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q38qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i25fh")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uiw5m"]
+
+[node name="WoodCutter" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ej04p")
+animation = &"attack"
+autoplay = "attack"
+frame_progress = 0.23948061
+script = ExtResource("2_uiw5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_uiw5m")

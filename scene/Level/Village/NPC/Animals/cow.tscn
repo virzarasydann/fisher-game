@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://qb13ubijf220"]
+
+[ext_resource type="Texture2D" uid="uid://dqdlnxtlm1rlw" path="res://scene/Level/Village/NPC/Animals/Cow/Cow.png" id="1_01xem"]
+[ext_resource type="Script" uid="uid://ccesosikrybsv" path="res://scene/Level/Village/NPC/Animals/cow.gd" id="1_73787"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73787"]
+atlas = ExtResource("1_01xem")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx6nc"]
+atlas = ExtResource("1_01xem")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wdkt"]
+atlas = ExtResource("1_01xem")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5pvn"]
+atlas = ExtResource("1_01xem")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyuqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73787")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx6nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wdkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5pvn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5ys1"]
+
+[node name="Cow" type="CharacterBody2D"]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_73787")
+
+[node name="CowSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lyuqj")
+animation = &"run"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d5ys1")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
