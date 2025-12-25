@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=4 uid="uid://cp5wl2uhivqoq"]
+
+[ext_resource type="Script" uid="uid://bu5ujasmm6r41" path="res://scene/Level/Village/bridge_interaction.gd" id="1_ao4bc"]
+[ext_resource type="Texture2D" uid="uid://cm22mfsqpsbwp" path="res://scene/Level/Village/Map/2 Objects/Bridge_Wood.png" id="2_28oiv"]
+[ext_resource type="LabelSettings" uid="uid://dsqegc4xclbsf" path="res://label_inteaction_settings.tres" id="3_bk8yw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10ugr"]
+texture = ExtResource("2_28oiv")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/terrains_peering_bit/top_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:1/0/terrain_set = 0
+7:1/0 = 0
+7:1/0/terrain_set = 0
+8:1/0 = 0
+8:1/0/terrain_set = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/bottom_right_corner = 0
+0:2/0/terrains_peering_bit/bottom_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/bottom_right_corner = 0
+1:2/0/terrains_peering_bit/bottom_side = 0
+1:2/0/terrains_peering_bit/bottom_left_corner = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/terrains_peering_bit/bottom_side = 0
+2:2/0/terrains_peering_bit/bottom_left_corner = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:2/0/terrain_set = 0
+8:2/0 = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrains_peering_bit/top_side = 0
+0:3/0/terrains_peering_bit/top_right_corner = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrains_peering_bit/top_left_corner = 0
+1:3/0/terrains_peering_bit/top_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrains_peering_bit/top_left_corner = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:3/0/terrain_set = 0
+7:3/0 = 0
+7:3/0/terrain_set = 0
+8:3/0 = 0
+8:3/0/terrain_set = 0
+
+[sub_resource type="TileSet" id="TileSet_n4m08"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.19118461, 0.44936562, 0.24666163, 1)
+sources/0 = SubResource("TileSetAtlasSource_10ugr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgt6i"]
+size = Vector2(66.5, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm4o5"]
+size = Vector2(106.5, 93.5)
+
+[node name="Bridge" type="StaticBody2D"]
+collision_layer = 16
+script = ExtResource("1_ao4bc")
+
+[node name="Bridge" type="TileMapLayer" parent="."]
+position = Vector2(-1080, -193)
+tile_map_data = PackedByteArray("AABEAA0AAAABAAAAAABEAA4AAAABAAAAAABFAA0AAAABAAAAAABFAA4AAAABAAIAAABGAA0AAAABAAIAAABGAA4AAAABAAIAAABFAAwAAAACAAEAAABHAA0AAAACAAIAAABHAA4AAAACAAIAAABGAAwAAAACAAEAAABFAA8AAAABAAAAAABGAA8AAAABAAIAAABHAA8AAAACAAIAAABHABAAAAABAAMAAABGABAAAAAAAAMAAABEAA8AAAABAAIAAABFABAAAAAAAAMAAABDAA8AAAAAAAIAAABEABAAAAAAAAMAAABDAA4AAAAAAAAAAABDAA0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_n4m08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30.75, 35)
+shape = SubResource("RectangleShape2D_fgt6i")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(36, 35)
+shape = SubResource("RectangleShape2D_jm4o5")
+
+[node name="label_interaction" type="Label" parent="."]
+offset_left = -201.0
+offset_top = -62.0
+offset_right = 72.0
+offset_bottom = -39.0
+text = "Tekan E untuk ke map selanjutnya"
+label_settings = ExtResource("3_bk8yw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

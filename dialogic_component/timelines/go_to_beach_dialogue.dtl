@@ -1,0 +1,5 @@
+fisherman: Apakah anda ingin pergi ke pantai?
+- Ya
+	set {go_to_beach_dialogue.go_to_beach} = true
+- Tidak
+	set {go_to_beach_dialogue.go_to_beach} = false

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bd30mtkjxuwbk"]
+
+[ext_resource type="Script" uid="uid://emnwamg8rjg6" path="res://scene/Entities/Player/ItemData.gd" id="1_npsup"]
+[ext_resource type="Texture2D" uid="uid://bpphnyur4m2o2" path="res://scene/Entities/Player/4 Icons/Icons_11.png" id="1_nw44f"]
+
+[resource]
+script = ExtResource("1_npsup")
+name = "Sampah"
+icon = ExtResource("1_nw44f")
+description = "Sampah"
+price = 0
+metadata/_custom_type_script = "uid://emnwamg8rjg6"

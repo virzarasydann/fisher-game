@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cfs1f06dbmjgc"]
+
+[ext_resource type="Texture2D" uid="uid://bkme3q3ujos5p" path="res://scene/Entities/Player/4 Icons/Icons_05.png" id="1_rp7b6"]
+[ext_resource type="Script" uid="uid://emnwamg8rjg6" path="res://scene/Entities/Player/ItemData.gd" id="1_v1b0t"]
+
+[resource]
+script = ExtResource("1_v1b0t")
+name = "Ikan Hijau"
+icon = ExtResource("1_rp7b6")
+description = "Sebuah Ikan Hijau yang langka"
+price = 200
+metadata/_custom_type_script = "uid://emnwamg8rjg6"

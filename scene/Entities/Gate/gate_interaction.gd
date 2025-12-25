@@ -18,7 +18,7 @@ func interact():
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "fisherman":
+	if body.name == "fisherman" :
 		Dialogic.VAR.first_dialogue.is_at_gate = true
 		Dialogic.start("res://dialogic_component/timelines/first_dialogue.dtl")
 		player_is_near = true

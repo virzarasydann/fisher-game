@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c2c1fhn1ktwvf"]
+
+[ext_resource type="Script" uid="uid://emnwamg8rjg6" path="res://scene/Entities/Player/ItemData.gd" id="1_6rckl"]
+[ext_resource type="Texture2D" uid="uid://cpodfj433xdpk" path="res://scene/Entities/Player/4 Icons/Icons_04.png" id="1_hykhl"]
+
+[resource]
+script = ExtResource("1_6rckl")
+name = "Ikan Mas"
+icon = ExtResource("1_hykhl")
+description = "Sebuah Ikan Mas yang langka"
+metadata/_custom_type_script = "uid://emnwamg8rjg6"

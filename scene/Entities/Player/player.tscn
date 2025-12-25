@@ -1,10 +1,24 @@
-[gd_scene load_steps=24 format=3 uid="uid://csv4xsxd66o0r"]
+[gd_scene load_steps=25 format=3 uid="uid://csv4xsxd66o0r"]
 
-[ext_resource type="Script" uid="uid://odsqmec4km8x" path="res://scene/Entities/Player/character_body_2d.gd" id="1_tytcy"]
+[ext_resource type="Script" uid="uid://odsqmec4km8x" path="res://scene/Entities/Player/player.gd" id="1_tytcy"]
 [ext_resource type="Texture2D" uid="uid://cmcf24ko20cv0" path="res://scene/Entities/Player/1 Fisherman/Fisherman_hook.png" id="2_462ap"]
 [ext_resource type="Texture2D" uid="uid://ctpe55wrmhheb" path="res://scene/Entities/Player/1 Fisherman/Fisherman_idle.png" id="3_5qbti"]
 [ext_resource type="Texture2D" uid="uid://bmxv38p17cc8i" path="res://scene/Entities/Player/1 Fisherman/Fisherman_walk.png" id="4_gvr3l"]
 [ext_resource type="AudioStream" uid="uid://8ph21k2kdysl" path="res://scene/Entities/Player/footstep.mp3" id="5_k01lb"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_cirxt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cirxt"]
+atlas = ExtResource("2_462ap")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl07p"]
+atlas = ExtResource("2_462ap")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ctk"]
+atlas = ExtResource("2_462ap")
+region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_of57s"]
 atlas = ExtResource("2_462ap")
@@ -17,18 +31,6 @@ region = Rect2(48, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqoya"]
 atlas = ExtResource("2_462ap")
 region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k65ib"]
-atlas = ExtResource("2_462ap")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wscrc"]
-atlas = ExtResource("2_462ap")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mswub"]
-atlas = ExtResource("2_462ap")
-region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hybxs"]
 atlas = ExtResource("3_5qbti")
@@ -74,6 +76,20 @@ region = Rect2(240, 0, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_cirxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl07p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ctk")
+}],
+"loop": false,
+"name": &"hook_fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_of57s")
 }, {
 "duration": 1.0,
@@ -81,18 +97,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tqoya")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k65ib")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wscrc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mswub")
 }],
-"loop": true,
-"name": &"hook",
+"loop": false,
+"name": &"hook_idle",
 "speed": 6.0
 }, {
 "frames": [{
@@ -137,6 +144,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cirxt"]
+radius = 3.0
+height = 9.853012
 
 [node name="fisherman" type="CharacterBody2D" node_paths=PackedStringArray("audio")]
 collision_layer = 2
@@ -144,15 +153,17 @@ collision_mask = 17
 script = ExtResource("1_tytcy")
 audio = NodePath("footstep")
 
+[node name="ItemResult" type="Sprite2D" parent="."]
+texture = SubResource("ImageTexture_cirxt")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cb6ix")
-animation = &"idle"
+animation = &"hook_fish"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.41776773
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 18)
+rotation = -0.17166622
 shape = SubResource("CapsuleShape2D_cirxt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
