@@ -1,0 +1,5 @@
+fisherman: Apakah anda ingin pergi ke desa?
+- Ya
+	set {go_to_village_dialogue.go_to_village} = true
+- Tidak
+	set {go_to_village_dialogue.go_to_village} = false

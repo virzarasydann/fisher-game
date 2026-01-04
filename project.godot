@@ -26,11 +26,14 @@ GameData="*res://scene/Entities/Player/GameData.gd"
 [dialogic]
 
 directories/dch_directory={
-"fisherman": "res://dialogic_component/character/fisherman.dch"
+"fisherman": "res://dialogic_component/character/fisherman.dch",
+"steam_man": "res://dialogic_component/character/steam_man.dch"
 }
 directories/dtl_directory={
 "first_dialogue": "res://dialogic_component/timelines/first_dialogue.dtl",
-"go_to_beach_dialogue": "res://dialogic_component/timelines/go_to_beach_dialogue.dtl"
+"go_to_beach_dialogue": "res://dialogic_component/timelines/go_to_beach_dialogue.dtl",
+"go_to_village_dialogue": "res://dialogic_component/timelines/go_to_village_dialogue.dtl",
+"npc_sell_dialogue": "res://dialogic_component/timelines/npc_sell_dialogue.dtl"
 }
 layout/style_list=["res://dialogic_component/New_File.tres"]
 layout/default_style="res://dialogic_component/New_File.tres"
@@ -78,6 +81,12 @@ variables={
 },
 "go_to_beach_dialogue": {
 "go_to_beach": false
+},
+"go_to_village_dialogue": {
+"go_to_village": false
+},
+"sell_all_fish": {
+"sell_all_fish": false
 }
 }
 
@@ -121,3 +130,4 @@ inventory={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.3316394, 0.33163944, 0.3316393, 1)

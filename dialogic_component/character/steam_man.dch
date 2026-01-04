@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "icon",
+&"description": "",
+&"display_name": "steam_man",
+&"mirror": false,
+&"nicknames": ["steam_man"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"icon": {
+"export_overrides": {
+"image": "\"res://scene/Level/Village/NPC/Steam Man/SteamMan.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

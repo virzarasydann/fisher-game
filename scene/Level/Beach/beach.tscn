@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=4 uid="uid://bim1faajxkcaf"]
+[gd_scene load_steps=29 format=4 uid="uid://bim1faajxkcaf"]
 
+[ext_resource type="Script" uid="uid://b18xsuseodvy2" path="res://scene/Level/Beach/beach.gd" id="1_hm8jj"]
 [ext_resource type="Texture2D" uid="uid://cgp4f62joqo7w" path="res://scene/Level/Beach/Map/nature_6/2.png" id="1_tn50j"]
 [ext_resource type="Texture2D" uid="uid://cdfqjvxchm8eo" path="res://assets/map/background nature/nature_7/2.png" id="3_4w800"]
 [ext_resource type="Texture2D" uid="uid://c6n0ghcj51pkh" path="res://scene/Level/Beach/Map/nature_6/1.png" id="4_xnjj6"]
@@ -10,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bbocf6ablx6rq" path="res://scene/Level/Beach/Map/Object fishman/Water.png" id="8_0ebfl"]
 [ext_resource type="Script" uid="uid://5hw0rlltn24o" path="res://scene/Level/Beach/camera_2d.gd" id="8_sc012"]
 [ext_resource type="PackedScene" uid="uid://csv4xsxd66o0r" path="res://scene/Entities/Player/player.tscn" id="9_4w800"]
+[ext_resource type="PackedScene" uid="uid://d3htfj4fvhqr" path="res://scene/Level/Beach/barrel_interaction.tscn" id="10_q44w5"]
+[ext_resource type="PackedScene" uid="uid://dfaukjxfs73b3" path="res://scene/Level/Beach/Audio/sea_sound.tscn" id="11_wcyuj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqobm"]
 texture = ExtResource("1_tn50j")
@@ -2099,77 +2102,32 @@ size = Vector2(21, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnjj6"]
 size = Vector2(164, 87)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27yws"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q44w5"]
 texture = ExtResource("8_0ebfl")
+0:0/animation_columns = 6
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
 0:0/0 = 0
-0:0/0/metadata/_better_terrain = {
-0: [0],
-3: [0],
-4: [0],
-7: [0],
-8: [0],
-11: [0],
-12: [0],
-15: [0],
-&"type": 0
-}
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
+0:1/animation_columns = 6
+0:1/animation_speed = 4.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
 0:1/0 = 0
-0:1/0/metadata/_better_terrain = {
-0: [0],
-3: [0],
-4: [0],
-7: [0],
-8: [0],
-11: [0],
-12: [0],
-15: [0],
-&"type": 0
-}
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-1:3/0 = 0
-3:3/0 = 0
-5:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-0:5/0 = 0
-2:5/0 = 0
-4:5/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_rpier"]
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_27yws")
-metadata/_better_terrain = {
-&"decoration": ["Decoration", Color(0.4117647, 0.4117647, 0.4117647, 1), 3, [], {
-&"path": "res://addons/better-terrain/icons/Decoration.svg"
-}],
-&"terrains": [["New terrain", Color(0.14771366, 0.8515625, 0.113098145, 1), 0, [], {
-&"path": ""
-}]],
-&"version": "0.2"
-}
+[sub_resource type="TileSet" id="TileSet_0ebfl"]
+sources/1 = SubResource("TileSetAtlasSource_q44w5")
 
 [node name="Beach" type="Node2D"]
+script = ExtResource("1_hm8jj")
 
 [node name="ObjectMap" type="Node2D" parent="."]
 
@@ -2220,19 +2178,22 @@ position = Vector2(117, 514.5)
 shape = SubResource("RectangleShape2D_xnjj6")
 
 [node name="label_interaction" type="Label" parent="ObjectMap/Bridge"]
-offset_left = 1.0
+offset_left = 4.0
 offset_top = 455.0
-offset_right = 274.0
+offset_right = 277.0
 offset_bottom = 478.0
 text = "Tekan E untuk memancing"
 label_settings = ExtResource("7_xnjj6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Water" type="TileMapLayer" parent="ObjectMap"]
-position = Vector2(433, -2)
-tile_map_data = PackedByteArray("AADy/yYAAAAAAAAAAADz/yYAAAAAAAAAAAD0/yYAAAAAAAAAAAD1/yYAAAAAAAAAAAD2/yYAAAAAAAAAAAD3/yYAAAAAAAAAAAD4/yYAAAAAAAAAAAD5/yYAAAAAAAAAAAD6/yYAAAAAAAAAAAD7/yYAAAAAAAAAAAD8/yYAAAAAAAAAAAD9/yYAAAAAAAAAAAD+/yYAAAAAAAAAAAD//yYAAAAAAAAAAAAAACYAAAAAAAAAAAABACYAAAAAAAAAAAACACYAAAAAAAAAAAADACYAAAAAAAAAAAADACcAAAAAAAEAAAACACcAAAAAAAEAAAABACcAAAAAAAEAAAAAACcAAAAAAAEAAAD//ycAAAAAAAEAAAD+/ycAAAAAAAEAAAD9/ycAAAAAAAEAAAD7/ycAAAAAAAEAAAD6/ycAAAAAAAEAAAD5/ycAAAAAAAEAAAD4/ycAAAAAAAEAAAD3/ycAAAAAAAEAAAD2/ycAAAAAAAEAAAD8/ycAAAAAAAEAAAD1/ycAAAAAAAEAAAD0/ycAAAAAAAEAAADz/ycAAAAAAAEAAADy/ycAAAAAAAEAAAAEACYAAAAAAAAAAAAFACYAAAAAAAAAAAAFACcAAAAAAAEAAAAGACcAAAAAAAEAAAAHACcAAAAAAAEAAAAEACcAAAAAAAEAAAAGACYAAAAAAAAAAAAHACYAAAAAAAAAAAAIACYAAAAAAAAAAAAJACYAAAAAAAAAAAAKACYAAAAAAAAAAAALACYAAAAAAAAAAAAMACYAAAAAAAAAAAAMACcAAAAAAAEAAAALACcAAAAAAAEAAAAKACcAAAAAAAEAAAAJACcAAAAAAAEAAAAIACcAAAAAAAEAAAANACYAAAAAAAAAAAAOACYAAAAAAAAAAAAPACYAAAAAAAAAAAAQACYAAAAAAAAAAAARACYAAAAAAAAAAAASACYAAAAAAAAAAAATACcAAAAAAAEAAAAUACcAAAAAAAEAAAAVACcAAAAAAAEAAAAVACYAAAAAAAAAAAAWACYAAAAAAAAAAAAXACYAAAAAAAAAAAAYACYAAAAAAAAAAAAZACYAAAAAAAAAAAAaACYAAAAAAAAAAAAbACYAAAAAAAAAAAAcACYAAAAAAAAAAAAdACYAAAAAAAAAAAAeACYAAAAAAAAAAAAfACYAAAAAAAAAAAAgACYAAAAAAAAAAAAhACYAAAAAAAAAAAAiACYAAAAAAAAAAAAjACYAAAAAAAAAAAAkACYAAAAAAAAAAAAkACcAAAAAAAEAAAAjACcAAAAAAAEAAAAiACcAAAAAAAEAAAAhACcAAAAAAAEAAAAgACcAAAAAAAEAAAAfACcAAAAAAAEAAAAeACcAAAAAAAEAAAAdACcAAAAAAAEAAAAcACcAAAAAAAEAAAAbACcAAAAAAAEAAAAaACcAAAAAAAEAAAAZACcAAAAAAAEAAAAYACcAAAAAAAEAAAAXACcAAAAAAAEAAAAWACcAAAAAAAEAAAASACcAAAAAAAEAAAARACcAAAAAAAEAAAAQACcAAAAAAAEAAAAPACcAAAAAAAEAAAAOACcAAAAAAAEAAAANACcAAAAAAAEAAAATACYAAAAAAAAAAAAUACYAAAAAAAAAAAAlACYAAAAAAAAAAAAlACcAAAAAAAEAAAA=")
-tile_set = SubResource("TileSet_rpier")
+[node name="Water2" type="TileMapLayer" parent="ObjectMap"]
+position = Vector2(0, -2)
+tile_map_data = PackedByteArray("AAANACYAAQAAAAAAAAANACcAAQAAAAEAAAAOACYAAQAAAAAAAAAOACcAAQAAAAEAAAAPACYAAQAAAAAAAAAPACcAAQAAAAEAAAAQACYAAQAAAAAAAAAQACcAAQAAAAEAAAARACYAAQAAAAAAAAARACcAAQAAAAEAAAASACYAAQAAAAAAAAASACcAAQAAAAEAAAATACYAAQAAAAAAAAATACcAAQAAAAEAAAAUACYAAQAAAAAAAAAUACcAAQAAAAEAAAAVACYAAQAAAAAAAAAVACcAAQAAAAEAAAAWACYAAQAAAAAAAAAWACcAAQAAAAEAAAAXACYAAQAAAAAAAAAXACcAAQAAAAEAAAAYACYAAQAAAAAAAAAYACcAAQAAAAEAAAAZACYAAQAAAAAAAAAZACcAAQAAAAEAAAAaACYAAQAAAAAAAAAaACcAAQAAAAEAAAAbACYAAQAAAAAAAAAbACcAAQAAAAEAAAAcACYAAQAAAAAAAAAcACcAAQAAAAEAAAAdACYAAQAAAAAAAAAdACcAAQAAAAEAAAAeACYAAQAAAAAAAAAeACcAAQAAAAEAAAAfACYAAQAAAAAAAAAfACcAAQAAAAEAAAAgACYAAQAAAAAAAAAgACcAAQAAAAEAAAAhACYAAQAAAAAAAAAhACcAAQAAAAEAAAAiACYAAQAAAAAAAAAiACcAAQAAAAEAAAAjACYAAQAAAAAAAAAjACcAAQAAAAEAAAAkACYAAQAAAAAAAAAkACcAAQAAAAEAAAAlACYAAQAAAAAAAAAlACcAAQAAAAEAAAAmACYAAQAAAAAAAAAmACcAAQAAAAEAAAAnACYAAQAAAAAAAAAnACcAAQAAAAEAAAAoACYAAQAAAAAAAAAoACcAAQAAAAEAAAApACYAAQAAAAAAAAApACcAAQAAAAEAAAAqACYAAQAAAAAAAAAqACcAAQAAAAEAAAArACYAAQAAAAAAAAArACcAAQAAAAEAAAAsACYAAQAAAAAAAAAsACcAAQAAAAEAAAAtACYAAQAAAAAAAAAtACcAAQAAAAEAAAAuACYAAQAAAAAAAAAuACcAAQAAAAEAAAAvACYAAQAAAAAAAAAvACcAAQAAAAEAAAAwACYAAQAAAAAAAAAwACcAAQAAAAEAAAAxACYAAQAAAAAAAAAxACcAAQAAAAEAAAAyACYAAQAAAAAAAAAyACcAAQAAAAEAAAAzACYAAQAAAAAAAAAzACcAAQAAAAEAAAA0ACYAAQAAAAAAAAA0ACcAAQAAAAEAAAA1ACYAAQAAAAAAAAA1ACcAAQAAAAEAAAA2ACYAAQAAAAAAAAA2ACcAAQAAAAEAAAA3ACYAAQAAAAAAAAA3ACcAAQAAAAEAAAA4ACYAAQAAAAAAAAA4ACcAAQAAAAEAAAA5ACYAAQAAAAAAAAA5ACcAAQAAAAEAAAA6ACYAAQAAAAAAAAA6ACcAAQAAAAEAAAA7ACYAAQAAAAAAAAA7ACcAAQAAAAEAAAA8ACYAAQAAAAAAAAA8ACcAAQAAAAEAAAA9ACYAAQAAAAAAAAA9ACcAAQAAAAEAAAA+ACYAAQAAAAAAAAA+ACcAAQAAAAEAAAA/ACYAAQAAAAAAAAA/ACcAAQAAAAEAAABAACYAAQAAAAAAAABAACcAAQAAAAEAAABBACYAAQAAAAAAAABBACcAAQAAAAEAAABCACYAAQAAAAAAAABCACcAAQAAAAEAAABDACYAAQAAAAAAAABDACcAAQAAAAEAAABEACYAAQAAAAAAAABEACcAAQAAAAEAAABFACYAAQAAAAAAAABFACcAAQAAAAEAAABGACYAAQAAAAAAAABGACcAAQAAAAEAAABHACYAAQAAAAAAAABHACcAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_0ebfl")
+
+[node name="BarrelInteraction" parent="ObjectMap" instance=ExtResource("10_q44w5")]
+position = Vector2(-3, 589)
 
 [node name="Entities" type="Node2D" parent="."]
 
@@ -2250,6 +2211,11 @@ polygon = PackedVector2Array(1152, -3, 1152, 646, -3, 642, -1, 3)
 script = ExtResource("8_sc012")
 player = NodePath("../Entities/fisherman")
 tilemap = NodePath("../ObjectMap/Mountain2")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="SeaSound" parent="Node" instance=ExtResource("11_wcyuj")]
+volume_db = -18.0
 
 [connection signal="body_entered" from="ObjectMap/Bridge/FishingArea" to="ObjectMap/Bridge" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="ObjectMap/Bridge/FishingArea" to="ObjectMap/Bridge" method="_on_area_2d_body_exited"]

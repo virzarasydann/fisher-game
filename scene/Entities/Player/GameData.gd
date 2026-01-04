@@ -24,7 +24,31 @@ func remove_item(item: Resource):
 
 	if inventory.has(item):
 		inventory.erase(item)
-# Called when the node enters the scene tree for the first time.
+
+
+var coins: int = 0
+
+signal uang_berubah(nilai_baru)
+
+func jual_semua_ikan() -> int:
+	var total_pendapatan = 0
+	
+
+	for item in inventory:
+		if "price" in item:
+			total_pendapatan += item.price
+		else:
+			total_pendapatan += 50 
+	
+	
+	coins += total_pendapatan
+	
+	inventory.clear()
+	emit_signal("uang_berubah", coins)
+	
+	print("Terjual! Dapat: ", total_pendapatan)
+	return total_pendapatan
+	
 func _ready() -> void:
 	pass # Replace with function body.
 

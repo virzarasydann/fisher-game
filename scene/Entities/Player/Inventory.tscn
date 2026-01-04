@@ -1,29 +1,93 @@
-[gd_scene load_steps=2 format=3 uid="uid://wapacj2ovh3t"]
+[gd_scene load_steps=6 format=3 uid="uid://wapacj2ovh3t"]
 
 [ext_resource type="Script" uid="uid://cm2co2p1o585" path="res://scene/Entities/Player/inventory.gd" id="1_bnhqn"]
+[ext_resource type="Texture2D" uid="uid://blwi33y12xv54" path="res://scene/Entities/Player/4 Icons/Standar.png" id="2_alfft"]
+[ext_resource type="Texture2D" uid="uid://d33m20fc6agyg" path="res://scene/Entities/Player/4 Icons/Gold_2.png" id="3_hppd6"]
+[ext_resource type="LabelSettings" uid="uid://di24m0lk6fiin" path="res://label_coins.tres" id="4_hppd6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnhqn"]
+bg_color = Color(0.083392, 0.083392, 0.08339202, 1)
 
 [node name="Inventory" type="CanvasLayer"]
 script = ExtResource("1_bnhqn")
 
-[node name="Background" type="Control" parent="."]
-layout_mode = 3
+[node name="ButtonTas" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 72.0
+grow_horizontal = 0
+focus_mode = 0
+texture_normal = ExtResource("2_alfft")
+stretch_mode = 5
+
+[node name="Button" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 72.0
+grow_horizontal = 0
+focus_mode = 0
+texture_normal = ExtResource("2_alfft")
+stretch_mode = 5
+
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -3.0
+offset_right = 12.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnhqn")
+
+[node name="CenterContainer" type="CenterContainer" parent="Background"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Background"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GridContainer" type="GridContainer" parent="Background/CenterContainer"]
+layout_mode = 2
 columns = 5
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "My Bag"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 6.0000005
+offset_right = 444.0
+offset_bottom = 306.0
+grow_horizontal = 2
+scale = Vector2(0.107354194, 0.083265305)
+
+[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("3_hppd6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelUang" type="Label" parent="Background/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("4_hppd6")

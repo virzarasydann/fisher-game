@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgy87m6jd21vh"]
+
+[ext_resource type="Texture2D" uid="uid://djsgq44qflbr7" path="res://scene/Level/Village/NPC/Steam Man/SteamMan_attack2.png" id="1_oavy6"]
+[ext_resource type="Script" uid="uid://nfs7s0yqifkr" path="res://scene/Level/Village/NPC/Steam Man/steam_man_script.gd" id="2_x4178"]
+[ext_resource type="LabelSettings" uid="uid://dsqegc4xclbsf" path="res://label_inteaction_settings.tres" id="3_a1ssx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4178"]
+atlas = ExtResource("1_oavy6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1ssx"]
+atlas = ExtResource("1_oavy6")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf1pv"]
+atlas = ExtResource("1_oavy6")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrhku"]
+atlas = ExtResource("1_oavy6")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oke2"]
+atlas = ExtResource("1_oavy6")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfur1"]
+atlas = ExtResource("1_oavy6")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k77cx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4178")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1ssx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf1pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrhku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oke2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfur1")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yv40x"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4178"]
+size = Vector2(33, 38)
+
+[node name="SteamMan" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k77cx")
+animation = &"attack"
+frame_progress = 0.36226046
+script = ExtResource("2_x4178")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 7)
+shape = SubResource("CapsuleShape2D_yv40x")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, 5)
+shape = SubResource("RectangleShape2D_x4178")
+
+[node name="label_interaction" type="Label" parent="."]
+offset_left = -84.0
+offset_top = -46.0
+offset_right = 87.0
+offset_bottom = -23.0
+text = "Click E untuk Interact"
+label_settings = ExtResource("3_a1ssx")
+
+[connection signal="body_entered" from="Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_exited"]

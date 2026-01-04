@@ -1,0 +1,5 @@
+steam_man: Apakah anda ingin menjual semua hasil tangkapan anda?
+- Ya
+	set {sell_all_fish.sell_all_fish} = true
+- Tidak
+	set {sell_all_fish.sell_all_fish} = false

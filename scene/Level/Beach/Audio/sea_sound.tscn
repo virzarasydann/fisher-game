@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfaukjxfs73b3"]
+
+[ext_resource type="AudioStream" uid="uid://cya56s8fmugc6" path="res://scene/Level/Beach/Audio/mixkit-sea-waves-loop-1196.ogg" id="1_l5nvp"]
+
+[node name="SeaSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_l5nvp")
+parameters/looping = true

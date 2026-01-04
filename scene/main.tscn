@@ -2130,7 +2130,6 @@ position = Vector2(60, 586)
 [node name="Audio" type="Node" parent="."]
 
 [node name="AudioTraverseTown" parent="Audio" instance=ExtResource("8_of57s")]
-volume_db = -18.0
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player", "tilemap")]
 position = Vector2(-11, 21)
